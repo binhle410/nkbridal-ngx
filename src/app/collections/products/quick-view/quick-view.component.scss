@@ -1,0 +1,29 @@
+@media only screen and(max-width: 768px) {
+  .fixed{
+    height: auto !important;
+    width: 100%;
+  }
+}
+
+.carousel-indicators {
+  position: static;
+  width: 24rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  .image-indicator {
+    margin-right: 10px;
+    height: 7rem;
+  }
+}
+.border-double {
+  border: double rgb(54, 82, 105) 10px;
+  border-radius: 15px;
+}
+
+.fixed {
+  height: 32rem;
+}
+.white-space-prewrap{
+  word-wrap: break-word;
+  white-space:pre-wrap;
+}

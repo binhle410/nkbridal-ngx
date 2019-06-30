@@ -1,0 +1,31 @@
+@media only screen and(min-width: 1024px){
+  .social-fb, .social-ig{
+    font-size: 25px !important; 
+  }
+  .social{
+    bottom:0px;
+    left:0;
+    
+  }
+}
+@media only screen and(min-width: 1280px){
+  .social-fb, .social-ig{
+    font-size: 25px !important; 
+  }
+  .social{
+    bottom:6px !important;
+    left:0;
+    
+  }
+}
+select {
+  border: none;
+  background: none;
+  font-size: 10pt;
+}
+.image-slide {
+  background-color: RGB(213,240,247);
+  width:100%;
+}
+
+

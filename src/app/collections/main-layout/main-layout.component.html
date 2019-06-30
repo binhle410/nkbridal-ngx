@@ -1,0 +1,63 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<!--  -->
+<div class="container">
+  <h3 class="mt-3 text-center text-uppercase font-weight-bold">{{title}}</h3>
+  <hr class="mt-1 mb-3">
+</div>
+<!--  -->
+
+
+<div class="container text-center mt-2 mb-4">
+  <pagination-controls class="pagination animated fadeIn" autoHide=true responsive=true nextLabel="" previousLabel=""
+    (pageChange)="p = $event">
+  </pagination-controls>
+  <div *ngIf="get" class="row">
+    <div *ngFor="let list of lists| paginate: { itemsPerPage: 16, currentPage: p }; let i = index;"
+      class="col-12 mb-3 {{get[i].clientWidth > get[i].clientHeight ? 'col-lg-9 col-md-12':'col-lg-3 col-md-4'}} animated">
+      <div class="model-parent text-center">
+        <div class="btn-group" [style.top.rem]="(!adminIsLoggedIn) ? '15' : '8'">
+          <ng-template [ngIf]="!adminIsLoggedIn">
+            <a (click)="openQuickView(list.id)"
+              class="quickview d-none btn btn-sm blue text-dark font-weight-bold animated fadeIn" data-toggle="modal"
+              data-target="#quick">QUICK VIEW</a>
+          </ng-template>
+          <ng-template [ngIf]="adminIsLoggedIn">
+            <div class="btn-admin">
+              <div style="cursor: default" class="btn btn-sm font-sm blue">
+                <input class="checkbox" type="checkbox" (click)="activeFeature(list.id,list.featured)"
+                  [checked]="list.featured == 1">
+                <span>Show to Feature</span>
+              </div>
+              <a routerLink="/home/upload/{{list.id}}"
+                class="btn blue text-dark font-weight-bold animated fadeIn my-3">Edit</a>
+              <a (click)="deleteProduct(list.id,list.category,list.s3_image);"
+                class="btn blue text-dark font-weight-bold animated fadeIn">DELETE</a>
+            </div>
+
+          </ng-template>
+        </div>
+        <div class="img">
+          <img routerLink="/products/{{route | lowercase}}/{{list.id}}" class="image-responsive" [src]="list.image" alt="">
+        </div>
+      </div>
+      <p class="font-weight-bold mt-2 mb-0">{{list.name}}</p>
+      <!-- <p class="text-muted">{{list.price | currency}}</p> -->
+    </div>
+  </div>
+  <pagination-controls class="pagination flex-center" autoHide=true responsive=true nextLabel="" previousLabel=""
+    (pageChange)="p = $event"></pagination-controls>
+
+</div>
+<div id="quick" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="quick" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content w-100">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <quick-view [thumbImg]="thumbImg" [info]="QuickView"></quick-view>
+    </div>
+  </div>
+</div>

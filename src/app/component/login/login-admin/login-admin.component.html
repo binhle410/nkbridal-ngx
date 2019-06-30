@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="col-12 text-center">
+      <img src="../../../assets/brand/Asset 1@4x.png" class="img-fluid img-size" alt="">
+    </div>
+  </div>
+</div>
+<div class="container flex-center my-5">
+  <div class="box w-100 w-md-50">
+    <div class="card">
+
+      <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Sign in</strong>
+      </h5>
+
+      <!--Card content-->
+      <div class="card-body px-lg-5 pt-0">
+
+        <!-- Form -->
+        <div (keyup.enter)="login()" class="text-center" style="color: #757575;">
+          <!-- User Name -->
+          <div class="form-group md-form">
+            <p class="text-left font-weight-bold">User Name:</p>
+            <input [(ngModel)]="userName" type="text" id="user" placeholder="User Name" class="form-control"
+              style="border: none;">
+          </div>
+          <!-- Password -->
+          <div class="md-form form-group">
+            <p class="text-left font-weight-bold">Password:</p>
+            <input [(ngModel)]="password" type="password" id="password" placeholder="Password" class="form-control"
+              style="border: none;">
+          </div>
+          <!-- Sign in button -->
+          <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" (click)="login()" type="button">Sign
+            in</button>
+        </div>
+        <!-- Form -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+@media only screen and(min-width: 768px) {
+  .custom-select {
+    width: auto;
+  }
+  .h-md-auto {
+    height: auto !important;
+  }
+}
+@media only screen and(max-width:1200px){
+  .model-parent {
+    .img {
+      img {
+        height: 310px !important;
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 768px) {
+  .custom-select {
+    width: auto;
+  }
+  .model-parent {
+    .btn-group {
+      width: 50%;
+    }
+  }
+
+  .mt-custom {
+    margin-top: 60px;
+  }
+  .model-parent {
+    .btn-group{
+      top: auto !important;
+      bottom: 50px;
+    }
+    .img {
+      img {
+        border-radius: 5px;
+        height: auto !important;
+        width: 100%;
+        border: solid black 1px;
+      }
+    }
+  }
+}
+select {
+  padding: 5px;
+  background-color: white;
+}
+
+.blue {
+  background-color: rgb(138, 232, 255) !important;
+}
+.model-parent {
+  .btn-group {
+    box-shadow: none;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    left: 0px;
+    right: 0px;
+  
+  }
+  .img {
+    img {
+      border-radius: 5px;
+      height: 355px;
+      border: solid black 1px;
+    }
+  }
+}
+.model-parent:hover {
+  .btn-group {
+    .quickview {
+      display: block !important;
+    }
+  }
+}
+
+.pagination {
+  margin-left: -30pt;
+}
+.pagination /deep/ .ngx-pagination .current {
+  border-radius: 5px;
+  -webkit-animation-name: test;
+  -webkit-animation-duration: 1s;
+  animation-name: test;
+  animation-duration: 1s;
+}
+@-webkit-keyframes test {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    background: rgb(138, 232, 255);
+  }
+}
+
+/* Standard syntax */
+@keyframes test {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    background: rgb(138, 232, 255);
+  }
+}
+// Brand
+.brand {
+  height: 5rem;
+}

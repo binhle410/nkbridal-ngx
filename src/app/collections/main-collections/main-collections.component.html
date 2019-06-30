@@ -1,0 +1,17 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<!--  -->
+<div class="container text-center mt-2">
+  <h3>Collections</h3>
+  <p class="text-muted text-left">Add some descriptive txt to your all collections page</p>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let list of lists" class="col-md-4 p-2 px-3 col-6">
+        <div class="parent">
+          <img [routerLink]="list.route" class="img-fluid" [src]="list.img" [alt]="list.name">
+        </div>
+        <div class="">{{list.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>

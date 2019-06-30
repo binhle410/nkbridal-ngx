@@ -1,0 +1,100 @@
+<nav style="z-index: 10;"
+  class="navbar navbar-expand-lg py-2 p-lg-0 sticky-top {{isSticky == true ? 'sticky-top-mobile':''}} blue lighten-3 navbar-light animated fadeIn">
+  <div class="navbar-toggler">
+    <div class="d-lg-none d-inline-flex align-items-center control">
+      <a style="color: black !important;font-size: 30px" class="fas fa-bars mr-2 align-self-center"
+        data-toggle="collapse" data-target=".collapse"></a>
+
+      <div class="" style="font-size:18px">
+        <a style="color: black !important" [routerLink]="['/home']" class="fas fa-home"></a>
+        <a style="color: black !important" target="_blank" href="https://fb.com/nkbridalaustralia"
+          class="fab fa-facebook mx-2"></a>
+        <a style="color: black !important" target="_blank" href="https://instagram.com/nkbridalaustralia"
+          class="fab fa-instagram"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal-ChangePassword -->
+
+
+  <!-- Navbar links -->
+  <div class="navbar-collapse collapse text-center" id="navbarCollapse">
+    <ul class="navbar-nav h-100 m-auto">
+      <ng-template class="nav-item" [ngIf]="adminIsLoggedIn">
+        <a class="nav-link h-100 p-3" style="color:red !important;font-weight:bold" data-target="#changePassword"
+          data-toggle="modal">Change Password</a>
+      </ng-template>
+      <li class="nav-item">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold"
+          [routerLink]="['/collections/formal']">FORMAL</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold"
+          [routerLink]="['/collections/wedding']">BRIDAL</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold"
+          [routerLink]="['/collections/bridesmaid']">BRIDESMAIDS</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold"
+          [routerLink]="['/collections/special-offers']">Special Offers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold"
+          [routerLink]="['/return-exchange']">Return and exchange</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold" [routerLink]="['/about-us']">ABOUT
+          US</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold"
+          [routerLink]="['/contact-us']">Contact Us</a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link h-100 p-3" style="color:black !important;font-weight:bold"
+          routerLink="/collections/rprs">Real People, Real Story</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+<!-- Modal Change Password -->
+<ng-template [ngIf]="adminIsLoggedIn">
+  <div (keyup.enter)="changePassword(params)" id="changePassword" class="modal {{activeForm == true ? 'disabled':''}}" tabindex='-1' role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+          <h4 class="text-center">Change Password</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- Body -->
+        <div class="modal-body border">
+          <!-- OLD PASSWORD -->
+          <div class="form-group">
+            <label class="" for="oldPassword">Old Password:</label>
+            <input [(ngModel)]="params.password" placeholder="Old Password" class="form-control" type="password">
+          </div>
+          <!-- NEW PASSWORD -->
+          <div class="form-group">
+              <label class="" for="oldPassword">New Password:</label>
+              <input [(ngModel)]="params.new_password" placeholder="New Password" class="form-control" type="password">
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn text-light red mr-2" data-dismiss="modal">Close</button>
+          <button (click)="changePassword(params)" type="button" class="btn text-light blue">Change</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

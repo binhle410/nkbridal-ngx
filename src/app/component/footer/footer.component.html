@@ -1,0 +1,53 @@
+<footer *ngIf="footer" class="page-footer font-sm blue pb-0 pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="main-footer col-md-8 mt-md-0 text-light mt-12">
+        <!-- Content -->
+        <h5 class="text-dark text-uppercase font-weight-bold" style="font-size: 30px">{{footer.Title}}</h5>
+        <h5 class="text-dark">{{footer.by | uppercase}}</h5>
+        <p class="text-dark">ABN: {{footer.ABN}}</p>
+        <p class="text-dark">Address: {{footer.Address}}</p>
+        <p class="text-dark">Phone: {{footer.NumPhone}}</p>
+        <p class="text-dark">Email: {{footer.Email}}</p>
+      </div>
+      <!-- Grid column -->
+      <div class="col-md-4">
+
+        <div (keyup.enter)="submit()" class="container white py-2 border shadow">
+          <h5 class="font-weight-bold text-uppercase text-dark">Subscribe</h5>
+          <label *ngIf="submitted" class="text-dark" for="">Thank you for subscribing.!!!</label>
+          <label *ngIf="!submitted" class="font-weight-bold text-dark d-block text-left" for="email">Email:</label>
+          <div *ngIf="!submitted" class="input-group">
+            <input [(ngModel)]="email" type="email" class="form-control px-1">
+            <div class="input-group-prepend">
+              <a (click)="submit()"
+                class="btn btn-primary text-right text-light font-weight-bold px-1 rounded input-group-text">Subscribe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+
+
+    </div>
+    <hr class="clearfix w-100 d-md-none pb-3">
+
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright h5 text-dark text-center mb-0 py-3">© 2019 Copyright:
+    <a class="text-dark">{{footer.Copyright}}</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->

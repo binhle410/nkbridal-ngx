@@ -1,0 +1,25 @@
+.bg-pink {
+  background-color: rgb(255, 170, 237);
+}
+.bg-pink-full {
+  background-color: rgb(234, 0, 255);
+}
+
+h5{
+  font-size: 20px;
+}
+@media only screen and (min-width: 768px){
+  .main-footer{
+    p{
+      font-size: 20px !important;
+    }
+  }
+}
+.text-dark{
+  color: black !important;
+}
+
+.blue{
+  background-color: RGB(213,240,247) !important;
+
+}

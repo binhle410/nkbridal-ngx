@@ -1,0 +1,125 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<!--  -->
+<div class="section-style mt-2">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let sectionStyle of sectionStyles" class="col-md-4 px-0">
+        <div routerLink="/collections/{{sectionStyle.title | lowercase}}"
+          class="link-parent text-center flex-center mx-2 my-2 my-md-0 position-relative">
+          <div class="position-absolute blank w-100 h-100"></div>
+          <p class="h2-responsive text-uppercase flex-center font-weight-bold" style="color: white !important">
+            {{sectionStyle.title}}</p>
+          <div class="img">
+            <img class=" img-fluid img-thumbnail rounded" [src]="sectionStyle.image" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+<section class="section-welcome">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="background blue-ground double font-weight-bold"><span>Welcome</span></h3>
+      </div>
+      <div class="col-12 mt-4">
+        <div class="content text-center text-dark" style="font-size: 15pt">
+          Welcome to NK Bridal Australia by Nancy K
+
+          We are proudly local owned and operated, specializing in custom made dresses in Brisbane, Australia.
+
+          We offer the largest range of custom made formal dresses, wedding dresses, and mother of the bride/groom
+          dresses
+          from affordable to luxury.
+
+          You can either show us your idea or chose one of our instore dresses, we will make your dream dress become
+          reality, fit your perfectly and won’t break your budget.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+
+</section>
+<!--  -->
+<section class="section-slide d-none d-md-block mb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="background double "><span class="font-weight-bold">Featured collection</span></h3>
+      </div>
+
+      <div class="col-12">
+        <owl-carousel-o [options]="customOptions">
+          <div *ngFor="let slide of sectionSlides">
+            <ng-template *ngIf="slide.featured == 1" carouselSlide [id]="slide.id">
+              <div class="container">
+                <div class="slide">
+                  <div class="card">
+                    <img class="slide-images card-img-top" [src]="slide.image" alt="Card image">
+
+                    <div class="card-body text-center">
+                      <h5 style="font-size: 13pt;" class="w-100 font-weight-bold card-title">{{slide.name}}</h5>
+                      <button (click)="openQuickView(slide.id)" data-target="#quick" data-toggle="modal"
+                        class="btn btn-hover blue text-light animated fadeIn">QUICK VIEW</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </ng-template>
+          </div>
+
+        </owl-carousel-o>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="quick" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="quick" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+
+      <div class="modal-content w-100">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <quick-view [thumbImg]="thumbImg" [info]="quickView"></quick-view>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+<!--  -->
+<section *ngIf="sectionEnd" class="sectionEnd container-fluid p-0">
+  <div class="text-absolute">
+    <h1 class="text-mobile-big font-weight-bold animated fadeIn font-weight-bold">{{sectionEnd.title}}</h1>
+  </div>
+  <div class="">
+    <img class="" [src]="sectionEnd.image" alt="">
+  </div>
+</section>
+<!--  -->
+<section class="section-follow mb-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="background double font-weight-bold"><span>Follow us on Facebook and Instagram</span></h3>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-12">
+        <a href="https://instagram.com/nkbridalaustralia" target="_blank" class="fab mr-4 fa-facebook fa-4x"></a>
+        <a href="https://instagram.com/nkbridalaustralia" target="_blank" class="fab fa-instagram fa-4x"></a>
+      </div>
+    </div>
+  </div>
+</section>

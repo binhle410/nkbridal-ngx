@@ -1,0 +1,22 @@
+<div class="position-relative ">
+    <div class="social d-none d-lg-block d-xl-flex justfity-content-between border-dark position-absolute">
+        <!-- sociaty -->
+        <a style="color: black !important" target="_blank" href="https://fb.com/nkbridalaustralia"
+            class="social-fb mx-3 fab fa-facebook"></a>
+        <a style="color: black !important" target="_blank" href="https://instagram.com/nkbridalaustralia"
+            class="social-ig fab fa-instagram"></a>
+    </div>
+    <section class="section-model">
+
+        <!--Carousel Wrapper-->
+        <!--Slides-->
+        <div class="banner" *ngFor="let sectionModel of sectionModels; let i = index"
+            [class.active]="i == 0 ? true : false">
+            <img routerLink="/home" class="image-slide" [src]="sectionModel.image" alt="First slide">
+        </div>
+
+
+        <!--/.Carousel Wrapper-->
+
+    </section>
+</div>
