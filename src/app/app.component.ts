@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './component/login/login.component';
 import { Component, OnInit } from '@angular/core';
@@ -12,10 +13,12 @@ export class AppComponent implements OnInit {
   title = 'NKBridalFinal';
   active = false;
 
-  constructor(private route: Router, private authService: AuthService){}
+  constructor(private route: Router, private authService: AuthService) { }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+    if (!location.protocol.startsWith("https")) {
+      window.location.href = location.href.replace('http', 'https');
+    }
   }
 
 }
