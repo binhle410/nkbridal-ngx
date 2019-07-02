@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const apiUrl = 'http://node-nkbridal.ap-southeast-1.elasticbeanstalk.com/api/';
+const apiUrl = 'https://api.nkbridal.com/api/';
 const ProductImg = 'products/';
 const thumbnailImg = 'thumbnail/';
 const slideAPI = 'slide/';

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-const apiUrl = 'http://node-nkbridal.ap-southeast-1.elasticbeanstalk.com/api/';
+const apiUrl = 'https://api.nkbridal.com/api/';
 const login = 'users/login';
 const user = 'users/'
 @Injectable({
