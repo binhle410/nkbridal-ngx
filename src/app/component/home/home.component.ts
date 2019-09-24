@@ -64,11 +64,11 @@ export class HomeComponent implements OnInit {
     navSpeed: 500,
     navText: ['<a class="carousel-control-prev text-dark mb-5 fas fa-angle-left fa-2x"></a>', '<a class="carousel-control-next text-dark mb-5 fas fa-angle-right fa-2x"></a>'],
     responsive: {
-      0: {
-        items: 1,
-      },
       1024: {
-        items: 3
+        items: 5,
+      },
+      768: {
+        items: 4
       }
     },
     nav: true

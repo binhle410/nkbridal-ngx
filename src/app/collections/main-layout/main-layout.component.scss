@@ -6,7 +6,7 @@
     height: auto !important;
   }
 }
-@media only screen and(max-width:1200px){
+@media only screen and(max-width:1200px) {
   .model-parent {
     .img {
       img {
@@ -30,7 +30,7 @@
     margin-top: 60px;
   }
   .model-parent {
-    .btn-group{
+    .btn-group {
       top: auto !important;
       bottom: 50px;
     }
@@ -61,15 +61,44 @@ select {
     width: 100px;
     left: 0px;
     right: 0px;
-  
   }
+
+
   .img {
     img {
       border-radius: 5px;
       height: 355px;
-      border: solid black 1px;
+      // border: solid black 1px;
+      -webkit-box-shadow: 0px 0px 19px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 19px -8px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 19px -8px rgba(0,0,0,0.75);
+    }
+    -webkit-animation-name: image;
+    -webkit-animation-duration: 3s;
+    animation-name: image;
+    animation-duration: 5s;
+      @-webkit-keyframes image {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;
     }
   }
+  @keyframes image {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  }
+
 }
 .model-parent:hover {
   .btn-group {

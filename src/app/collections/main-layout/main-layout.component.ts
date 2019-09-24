@@ -9,6 +9,7 @@ import * as AWS from 'aws-sdk';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
+  loading = true;
   active = false;
   @Input() title;
   @Input() route;
@@ -36,6 +37,9 @@ export class MainLayoutComponent implements OnInit {
 
     this.apiService.getAllInfo(this.route)
       .subscribe(res => {
+        setTimeout(() => {
+          this.loading = false;
+        }, 4000)
         this.lists = res;
         this.collection = res;
 

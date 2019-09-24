@@ -6,9 +6,12 @@
   <hr class="mt-1 mb-3">
 </div>
 <!--  -->
+<div *ngIf="loading" class="container my-2 text-center">
+  <img src="/assets/img-process/loading.gif" alt="">
+</div>
 
 
-<div class="container text-center mt-2 mb-4">
+<div *ngIf="!loading" class="container text-center mt-2 mb-4">
   <pagination-controls class="pagination animated fadeIn" autoHide=true responsive=true nextLabel="" previousLabel=""
     (pageChange)="p = $event">
   </pagination-controls>
